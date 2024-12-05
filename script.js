@@ -26,13 +26,13 @@ function newCard (post){
     const {title, url} = post;
     cardContainer.innerHTML += 
     `<div class="col col-3 bg-white">
-                    <img class="pin" src="assets_day1/img/pin.svg" alt="">
-                    <div class="img-container">
-                        <img class="card-img" src=${url} alt="">
-                    </div>
-                    <div>
-                        <p>${title}</p>
-                    </div>
-                </div>`;
+        <img class="pin" src="assets_day1/img/pin.svg" alt="">
+        <div class="img-container">
+            <img class="card-img" src=${url} alt="">
+        </div>
+        <div>
+            <p>${title}</p>
+        </div>
+    </div>`;
     
 }
