@@ -1,0 +1,15 @@
+body {
+    font-family: "Nunito", sans-serif;
+    background-image: url(../img/cork.png);
+}
+
+header {
+    background-image: url("../img/wall.png");
+    background-size: 30%;
+    font-style: italic;
+    height: 150px;
+}
+
+h1 {
+    padding-top: 22px;
+}
