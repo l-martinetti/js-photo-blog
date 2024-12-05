@@ -33,14 +33,12 @@ main {
     margin-inline: 10px;
     box-shadow: 2px 2px 5px -1px;
 }
-.mycontainer .row {
-    position: relative;
-}
 
 .mycontainer .row img.pin {
     position: relative;
     top: -10px;
     left: calc(50% - 15px);
+    margin-bottom: -17px;
 }
 
 p {

@@ -21,8 +21,6 @@ axios.get(endpoint + limit)
 
 
 
-
-
 function newCard (post){
     const {title, url} = post;
     cardContainer.innerHTML += 
@@ -32,7 +30,7 @@ function newCard (post){
             <img class="card-img" src=${url} alt="">
         </div>
         <div>
-            <p>${title}</p>
+            <p class="mb-4">${title}</p>
         </div>
     </div>`;
     
