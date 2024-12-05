@@ -23,19 +23,27 @@ h1 {
 }
 
 /* CARD */
-.mycontainer .row {
-    position: relative;
-}
-
-.mycontainer .row img {
-    position: relative;
-    top: -10px;
-    transform: translateX(120px);
-}
-
-.mycontainer .row div {
+.mycontainer .row > div {
     height: 400px; 
     width: 300px; 
     margin-bottom: 20px;
     margin-inline: 10px;
 }
+.mycontainer .row {
+    position: relative;
+}
+
+.mycontainer .row img.pin {
+    position: relative;
+    top: -10px;
+    transform: translateX(120px);
+}
+
+p {
+    font-style: italic;
+    text-transform: capitalize;
+    padding-top: 10px;
+    font-size: 0.9rem;
+}
+
+
