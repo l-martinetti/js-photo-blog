@@ -13,6 +13,9 @@ axios.get(endpoint)
             response.data.forEach(post => newCard(post))
         } 
     })
+    .catch(error =>{
+        console.log("Errore: ", error);
+    })
 
 
 
@@ -20,12 +23,12 @@ axios.get(endpoint)
 
 
 function newCard (post){
-    const {title, thumbnailUrl} = post;
+    const {title, url} = post;
     cardContainer.innerHTML += 
-    `<div class="col col-2 bg-white">
+    `<div class="col col-3 bg-white">
                     <img class="pin" src="assets_day1/img/pin.svg" alt="">
-                    <div>
-                        <img class="card-img" src=${thumbnailUrl} alt="">
+                    <div class="img-container">
+                        <img class="card-img" src=${url} alt="">
                     </div>
                     <div>
                         <p>${title}</p>

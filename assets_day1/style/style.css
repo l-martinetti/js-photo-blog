@@ -6,27 +6,33 @@ body {
 /*** HEADER ***/
 
 header {
-    font-family: "Nunito", sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-image: url("../img/wall.png");
     background-size: 30%;
     font-style: italic;
-    height: 150px;
+    font-weight: bolder;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
 }
 
 h1 {
-    padding-top: 22px;
+    padding-top: 8px;
 }
 
 /*** MAIN ***/
+main {
+    margin-top: 150px;
+}
 
 .mycontainer {
-    margin: 50px 250px;
+    margin: 50px 200px;
 }
 
 /* CARD */
 .mycontainer .row > div {
-    height: 400px; 
-    width: 300px; 
     margin-bottom: 20px;
     margin-inline: 10px;
 }
@@ -37,7 +43,11 @@ h1 {
 .mycontainer .row img.pin {
     position: relative;
     top: -10px;
-    transform: translateX(120px);
+    left: calc(50% - 15px);
+}
+
+.img-container {
+    width: 100%;
 }
 
 p {
