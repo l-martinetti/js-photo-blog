@@ -11,7 +11,7 @@ header {
     background-size: 30%;
     font-style: italic;
     font-weight: bold;
-    height: 100px;
+    height: 150px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -20,11 +20,11 @@ header {
 
 /*** MAIN ***/
 main {
-    margin-top: 150px;
+    margin-top: 200px;
 }
 
 .mycontainer {
-    margin: 50px 190px;
+    margin: 50px;
 }
 
 /* CARD */
