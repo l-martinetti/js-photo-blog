@@ -1,9 +1,11 @@
 body {
-    font-family: "Nunito", sans-serif;
     background-image: url(../img/cork.png);
 }
 
+/*** HEADER ***/
+
 header {
+    font-family: "Nunito", sans-serif;
     background-image: url("../img/wall.png");
     background-size: 30%;
     font-style: italic;
@@ -12,4 +14,28 @@ header {
 
 h1 {
     padding-top: 22px;
+}
+
+/*** MAIN ***/
+
+.mycontainer {
+    margin: 50px 250px;
+}
+
+/* CARD */
+.mycontainer .row {
+    position: relative;
+}
+
+.mycontainer .row img {
+    position: relative;
+    top: -10px;
+    transform: translateX(120px);
+}
+
+.mycontainer .row div {
+    height: 400px; 
+    width: 300px; 
+    margin-bottom: 20px;
+    margin-inline: 10px;
 }
