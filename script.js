@@ -8,21 +8,22 @@ const cardContainer = document.getElementById("card-container");
 
 // OVERLAY 
 const overlay = document.querySelector(".overlay");
-const cardImg = document.querySelectorAll(".card-img");
 const button = document.querySelector(".button");
 
 // AJAX 
 axios.get(endpoint + limit)
     .then(response => {       
+        // Stampa cards
         response.data.forEach(post => newCard(post)) 
+        // OVERLAY OFF
+        cardRead()
     })
     .catch(error =>{
         console.log("Errore: ", error);
     })
     
-// OVERLAY ON / OFF
-// document.addEventListener("click", overlayOff);
-// button.addEventListener("click", overlayOn)
+// OVERLAY ON 
+button.addEventListener("click", overlayOn)
 
 
 // Functions
@@ -48,3 +49,10 @@ function overlayOff(){
 function overlayOn(){
     overlay.classList.add("d-none")
 };
+
+function cardRead() {
+    const cardImgs = document.querySelectorAll(".card-img");
+    cardImgs.forEach(img => {
+        img.addEventListener("click", overlayOff);
+    })
+}
