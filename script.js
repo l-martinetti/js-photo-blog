@@ -1,26 +1,31 @@
 /*
 * L'API fornita restituisce alcuni valori di mio interesse, in particolare il title e l'url per andare a popolare la card con testo e immagine
 */
-
+// CARDS
 const limit = "6";
 const endpoint = "https://jsonplaceholder.typicode.com/photos?_limit=";
 const cardContainer = document.getElementById("card-container");
 
+// OVERLAY 
+const overlay = document.querySelector(".overlay");
+const cardImg = document.querySelectorAll(".card-img");
+const button = document.querySelector(".button");
 
+// AJAX 
 axios.get(endpoint + limit)
     .then(response => {       
-        for(let i = 0; i < response.data.length; i++){
-            cardContainer.innerHTML = "";
-            response.data.forEach(post => newCard(post))
-        } 
+        response.data.forEach(post => newCard(post)) 
     })
     .catch(error =>{
         console.log("Errore: ", error);
     })
+    
+// OVERLAY ON / OFF
+// document.addEventListener("click", overlayOff);
+// button.addEventListener("click", overlayOn)
 
 
-
-
+// Functions
 function newCard (post){
     const {title, url} = post;
     cardContainer.innerHTML += 
@@ -35,3 +40,11 @@ function newCard (post){
     </div>`;
     
 }
+
+function overlayOff(){
+    overlay.classList.remove("d-none")
+};
+
+function overlayOn(){
+    overlay.classList.add("d-none")
+};
