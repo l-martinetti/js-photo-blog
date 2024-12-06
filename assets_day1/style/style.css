@@ -15,7 +15,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 998;
 }
 
 /*** MAIN ***/
@@ -25,6 +25,22 @@ main {
 
 .mycontainer {
     margin: 50px;
+}
+
+/* OVERLAY */
+
+.overlay {
+    width: 100%;
+    height: 160vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 999;
+    top: 0;
+}
+
+.overlay-wrapper{
+    position: fixed;
+    left: calc(50% - 20px);
 }
 
 /* CARD */
