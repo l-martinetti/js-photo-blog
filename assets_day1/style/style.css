@@ -55,6 +55,14 @@ main {
     margin-bottom: 20px;
     margin-inline: 10px;
     box-shadow: 2px 2px 5px -1px;
+    
+}
+
+.mycontainer .row > div:hover {
+    cursor: pointer;
+    rotate: 10deg;
+    box-shadow: 4px 4px 4px;
+    transition-duration: 0.3s;
 }
 
 .mycontainer .row img.pin {
