@@ -15,15 +15,15 @@ axios.get(endpoint + limit)
     .then(response => {       
         // Stampa cards
         response.data.forEach(post => newCard(post)) 
-        // OVERLAY OFF
+        // OVERLAY ON
         cardRead()
     })
     .catch(error =>{
         console.log("Errore: ", error);
     })
     
-// OVERLAY ON 
-button.addEventListener("click", overlayOn)
+// OVERLAY OFF
+button.addEventListener("click", overlayOff)
 
 
 // Functions
@@ -42,17 +42,25 @@ function newCard (post){
     
 }
 
-function overlayOff(){
+function overlayOn(){
     overlay.classList.remove("d-none")
+    
 };
 
-function overlayOn(){
+function overlayOff(){
     overlay.classList.add("d-none")
 };
 
+
+
 function cardRead() {
     const cardImgs = document.querySelectorAll(".card-img");
+    const overlayImg = document.querySelector(".overlay-img")
+ 
     cardImgs.forEach(img => {
-        img.addEventListener("click", overlayOff);
+        img.addEventListener("click", () => {
+            overlayImg.src = img.src;
+            overlayOn()
+    });     
     })
 }
