@@ -4,7 +4,6 @@ const cardContainer = document.getElementById("card-container");
 
 // OVERLAY 
 const overlay = document.getElementById("overlay");
-const closeButton = overlay.querySelector("button");
 
 // AJAX 
 axios.get(endpoint)
@@ -22,11 +21,15 @@ cardContainer.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         overlay.classList.remove("d-none");
     }
+    printOverlayCard(event)
+
 });
 
-// Chiudi l'overlay al click del bottone "Chiudi"
-closeButton.addEventListener("click", () => {
-    overlay.classList.add("d-none");
+// Event delegation per chiudere overlay
+overlay.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-light")) {
+        overlay.classList.add("d-none");
+    }
 });
 
 
@@ -43,4 +46,23 @@ function newCard(post) {
   </div>
 </div>`;
 }
+
+function printOverlayCard(e) {
+    const card = e.target.closest(".card");
+    const title = card.querySelector(".card-title").textContent;
+    const description = card.querySelector(".card-text").textContent;
+    const img = card.querySelector(".card-img-top").src;
+
+    overlay.innerHTML = `
+    <div class="card" style="width: 18rem;">
+    <img src=${img} class="card-img-top mt-2" alt${title} style="width: 100%; max-height: 200px; object-fit: cover;">
+    <div class="card-body d-flex flex-column align-items-center">
+      <h5 class="card-title">${title}</h5>
+      <p class="card-text">${description}</p>
+      <button type="button" class="btn btn-light mb-3 border">Chiudi</button>
+    </div>
+  </div>`;
+}
+
+
 
