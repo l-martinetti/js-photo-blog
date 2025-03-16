@@ -1,3 +1,8 @@
+html,
+body {
+    overscroll-behavior: none;
+}
+
 body {
     background-image: url(../img/cork.png);
     background-size: 40%;
@@ -8,76 +13,4 @@ body {
 header {
     font-family: "Montserrat", sans-serif;
     background-image: url("../img/wall.png");
-    background-size: 30%;
-    font-style: italic;
-    font-weight: bold;
-    height: 100px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 998;
 }
-
-/*** MAIN ***/
-main {
-    margin-top: 150px;
-}
-
-.mycontainer {
-    margin: 50px;
-}
-
-/* OVERLAY */
-
-.overlay {
-    width: 100%;
-    height: 160vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    z-index: 999;
-    top: 0;
-}
-
-.overlay-wrapper{
-    position: fixed;
-    left: calc(50% - 310px);
-}
-
-/* OVERLAY BUTTON */
-
-.button {
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
-/* CARD */
-.mycontainer .row > div {
-    margin-bottom: 20px;
-    margin-inline: 10px;
-    box-shadow: 2px 2px 5px -1px;
-    
-}
-
-.mycontainer .row > div:hover {
-    cursor: pointer;
-    rotate: 10deg;
-    box-shadow: 4px 4px 4px;
-    transform: scale(1.1, 1.1);
-    transition-duration: 0.3s;
-}
-
-.mycontainer .row img.pin {
-    position: relative;
-    top: -10px;
-    left: calc(50% - 15px);
-    margin-bottom: -17px;
-}
-
-p {
-    font-style: italic;
-    text-transform: capitalize;
-    padding-top: 10px;
-    font-size: 0.9rem;
-}
-
-

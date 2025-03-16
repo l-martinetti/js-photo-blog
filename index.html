@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Blog</title>
 
-        <!-- style -->
+    <!-- style -->
     <link rel="stylesheet" href="assets_day1/style/style.css">
     <link rel="stylesheet" href="assets_day1/style/mediaquery.css">
 
-        <!-- font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
-        <!-- bootstrap -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css' integrity='sha512-VcyUgkobcyhqQl74HS1TcTMnLEfdfX6BbjhH8ZBjFU9YTwHwtoRtWSGzhpDVEJqtMlvLM2z3JIixUOu63PNCYQ==' crossorigin='anonymous'/>
+    <!-- bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css'
+        integrity='sha512-VcyUgkobcyhqQl74HS1TcTMnLEfdfX6BbjhH8ZBjFU9YTwHwtoRtWSGzhpDVEJqtMlvLM2z3JIixUOu63PNCYQ=='
+        crossorigin='anonymous' />
 
-        <!-- axios -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.js' integrity='sha512-+dJa1RvuE8/HFftifMtr7hqixdEkb/DizfXUZAA0pyZeVdNnyZyKy9RnIWi0JSWUznbCNbaQNn0E6nbtrdL+9g==' crossorigin='anonymous'></script>
+    <!-- axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.js'
+        integrity='sha512-+dJa1RvuE8/HFftifMtr7hqixdEkb/DizfXUZAA0pyZeVdNnyZyKy9RnIWi0JSWUznbCNbaQNn0E6nbtrdL+9g=='
+        crossorigin='anonymous'></script>
 </head>
+
 <body>
-            <!-- overlay -->
-    <div class="overlay d-none">
-        <div class="overlay-wrapper d-flex flex-column align-items-center">
-            <button type="button" class="button">Chiudi</button>
-            <img class="overlay-img" src="" alt="">
+    <!-- overlay -->
+    <div id="overlay"
+        class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex justify-content-center align-items-center z-3 d-none">
+        <div class="d-flex flex-column align-items-center">
+            <button type="button" class="btn btn-light mb-3">Chiudi</button>
         </div>
     </div>
-            <!-- /overlay -->
-    <header class="d-flex justify-content-center align-items-center">
-        <h1 class="text-uppercase mb-0 title">estate '24</h1>
+    <!-- /overlay -->
+    <header class="d-flex justify-content-center align-items-center sticky-top mb-5 z-1">
+        <h1 class="text-uppercase mb-0 display-2 "> <strong><i>estate '24</i></strong></h1>
     </header>
     <main>
-        <div class="mycontainer">
-            <div id="card-container" class="row justify-content-center">
+        <div class="container">
+            <div id="card-container" class="row justify-content-center gap-4">
                 <!-- cards -->
             </div>
         </div>
-    </main>    
-
-            <!-- script -->
+    </main>
+    <!-- script -->
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
