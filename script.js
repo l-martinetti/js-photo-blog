@@ -1,66 +1,46 @@
-/*
-* L'API fornita restituisce alcuni valori di mio interesse, in particolare il title e l'url per andare a popolare la card con testo e immagine
-*/
 // CARDS
-const limit = "6";
-const endpoint = "https://jsonplaceholder.typicode.com/photos?_limit=";
+const endpoint = "https://api.sampleapis.com/recipes/recipes";
 const cardContainer = document.getElementById("card-container");
 
 // OVERLAY 
-const overlay = document.querySelector(".overlay");
-const button = document.querySelector(".button");
+const overlay = document.getElementById("overlay");
+const closeButton = overlay.querySelector("button");
 
 // AJAX 
-axios.get(endpoint + limit)
-    .then(response => {       
-        // Stampa cards
-        response.data.forEach(post => newCard(post)) 
-        // OVERLAY ON
-        cardRead()
+axios.get(endpoint)
+    .then(res => {
+        // Stamp cards
+        res.data.forEach(post => post.id < 6 ? newCard(post) : null);
     })
-    .catch(error =>{
+    .catch(error => {
         console.log("Errore: ", error);
     })
-    
-// OVERLAY OFF
-button.addEventListener("click", overlayOff)
+
+// Event Listeners
+
+cardContainer.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        overlay.classList.remove("d-none");
+    }
+});
+
+// Chiudi l'overlay al click del bottone "Chiudi"
+closeButton.addEventListener("click", () => {
+    overlay.classList.add("d-none");
+});
 
 
 // Functions
-function newCard (post){
-    const {title, url} = post;
-    cardContainer.innerHTML += 
-    `<div class="col col-sm-12 col-md-5 col-lg-3 bg-white mycard">
-        <img class="pin" src="assets_day1/img/pin.svg" alt="">
-        <div class="img-container">
-            <img class="card-img" src=${url} alt="">
-        </div>
-        <div>
-            <p class="mb-4">${title}</p>
-        </div>
-    </div>`;
-    
+function newCard(post) {
+    const { title, photoUrl } = post;
+    cardContainer.innerHTML +=
+        `<div class="card" style="width: 18rem;">
+  <img src=${photoUrl} class="card-img-top" alt${title}>
+  <div class="card-body">
+    <h5 class="card-title">${title}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button class="btn btn-primary">Go somewhere</button>
+  </div>
+</div>`;
 }
 
-function overlayOn(){
-    overlay.classList.remove("d-none")
-    
-};
-
-function overlayOff(){
-    overlay.classList.add("d-none")
-};
-
-
-
-function cardRead() {
-    const cardImgs = document.querySelectorAll(".card-img");
-    const overlayImg = document.querySelector(".overlay-img")
- 
-    cardImgs.forEach(img => {
-        img.addEventListener("click", () => {
-            overlayImg.src = img.src;
-            overlayOn()
-    });     
-    })
-}
