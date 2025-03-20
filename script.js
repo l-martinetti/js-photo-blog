@@ -39,9 +39,11 @@ function newCard(post) {
     cardContainer.innerHTML +=
         `<div class="card" style="width: 18rem;">
   <img src=${photoUrl} class="card-img-top mt-2" alt${title} style="width: 100%; max-height: 200px; object-fit: cover;">
-  <div class="card-body d-flex flex-column align-items-center">
+  <div class="card-body d-flex flex-column align-items-center justify-content-between">
+    <div>
     <h5 class="card-title">${title}</h5>
     <p class="card-text">${description}</p>
+    </div>
     <button class="btn btn-primary mt-2">Scopri di pi&ugrave</button>
   </div>
 </div>`;
@@ -63,6 +65,5 @@ function printOverlayCard(e) {
     </div>
   </div>`;
 }
-
 
 
