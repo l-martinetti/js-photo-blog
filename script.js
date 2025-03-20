@@ -18,12 +18,13 @@ axios.get(endpoint)
 // Event Listeners
 
 cardContainer.addEventListener("click", (event) => {
-    if (event.target.tagName === "BUTTON") {
+    if (event.target.classList.contains("card-img-top") || event.target.classList.contains("card-title") || event.target.classList.contains("card-text") || event.target.classList.contains("card-body")) {
         overlay.classList.remove("d-none");
     }
     printOverlayCard(event)
-
 });
+
+
 
 // Event delegation per chiudere overlay
 overlay.addEventListener("click", (event) => {
@@ -39,12 +40,9 @@ function newCard(post) {
     cardContainer.innerHTML +=
         `<div class="card" style="width: 18rem;">
   <img src=${photoUrl} class="card-img-top mt-2" alt${title} style="width: 100%; max-height: 200px; object-fit: cover;">
-  <div class="card-body d-flex flex-column align-items-center justify-content-between">
-    <div>
+  <div class="card-body d-flex flex-column align-items-center">
     <h5 class="card-title">${title}</h5>
     <p class="card-text">${description}</p>
-    </div>
-    <button class="btn btn-primary mt-2">Scopri di pi&ugrave</button>
   </div>
 </div>`;
 }
