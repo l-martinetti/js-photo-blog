@@ -21,8 +21,8 @@ header {
 
 /** MAIN **/
 
-.card:hover {
-    rotate: 15deg;
-    transition: 0.4s;
+.card.cursor-pointer:hover {
+    rotate: 8deg;
+    transition: 0.5s;
     transform: scale(1.1);
 }
