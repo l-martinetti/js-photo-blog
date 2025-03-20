@@ -8,9 +8,21 @@ body {
     background-size: 40%;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 /*** HEADER ***/
 
 header {
     font-family: "Montserrat", sans-serif;
     background-image: url("../img/wall.png");
+}
+
+/** MAIN **/
+
+.card:hover {
+    rotate: 15deg;
+    transition: 0.4s;
+    transform: scale(1.1);
 }

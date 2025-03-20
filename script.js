@@ -38,7 +38,7 @@ overlay.addEventListener("click", (event) => {
 function newCard(post) {
     const { title, photoUrl, description } = post;
     cardContainer.innerHTML +=
-        `<div class="card" style="width: 18rem;">
+        `<div class="card cursor-pointer" style="width: 18rem;">
   <img src=${photoUrl} class="card-img-top mt-2" alt${title} style="width: 100%; max-height: 200px; object-fit: cover;">
   <div class="card-body d-flex flex-column align-items-center">
     <h5 class="card-title">${title}</h5>
